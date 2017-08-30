@@ -1,0 +1,24 @@
+h1, h2 {
+				display: inline-block;
+				border: solid 3px black;
+			}
+			div { 
+				width: 100px;
+				height: 100px;
+			}
+			.BlueAndIt {
+				color: blue;
+				font-style: italic;
+			}
+			.underline {
+				text-decoration: underline;
+			}
+			img.nav {
+				width: 100px;
+			}
+			div.nav {
+				color: red;
+			}
+			#HAPPY {
+				font-family: 'Pangolin', cursive;
+			}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+
+
+	<h1 id="dealer"></h1><br><br>
+	<h2 id="yourHand"></h2><br><br>
+
+	<form>
+		<!--creates the start button-->
+		<input type="button" id="start" value="START" onclick="ranDeal()">
+
+		<!--creates the hit button-->
+		<input type="button" id="hit" value="HIT" onclick="ranHit()">
+
+		<!--creates stay button-->
+		<input type="button" id="stay" value="STAY" onclick="score()">
+
+		<!--placeholder to enter bets-->
+		<input type="number" id="Raise Bet:" step="100" value="10" 	placeholder="Enter Ante" border="1">
+	</form><br><br>
+
+	<h3 id="totalEarns"></h3>Total Earns<br><br>
+
+
+
+
+
+	<script type="text/javascript">
+
+		//creates an array for suits and sets value for non integers
+		var deck = {
+			'A':1 || 11
+			'2':2,
+			'3':3,
+			'4':4, 
+			'5':5,
+			'6':6, 
+			'7':7,
+			'8':8, 
+			'9':9, 
+			'10':10,
+			'J', 'Q', 'K': 10,
+		};
+
+		//randomizes the cards dealt at the start of game to dealer and player
+		function ranDeal(){
+			var ran = parseInt(Math.random()*deck.length);
+					console.log(deck[ran]); 
+			
+			var card1= ranDeal(),
+			var card2= ranDeal(),
+			var dCard1= ranDeal(),
+			var dCard2= ranDeal(),
+			var index = 0
+			document.getElementById("dealer").innerHTML += dCard1 + dCard2;
+			document.getElementById("yourHand").innerHTML += card1 + card2;
+		}
+
+		//randomizes the card when player wants to hit for another card
+		function ranHit(){
+			var hitCard = parseInt(Math.random()*deck.length);
+			console.log(deck[ran]);
+			document.getElementById("hit").innerHTML += deck[ran] + " , ";
+
+
+		//adds the sum of the total earnings of the bets
+		function addBet(){
+			return sum
+
+		}
+		//claims if the player bust, wins or ties
+		function score(){}
+		for (var i = 0; i < deck.length; i++){
+			if(deck){
+
+			}
+		}
+			
+		
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

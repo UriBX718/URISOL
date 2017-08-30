@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	
+
+
+	<h1 id="dealer"></h1><br><br>
+	<h2 id="yourHand"></h2><br><br>
+
+	<form>
+		<!--creates the start button-->
+		<input type="button" id="start" value="START" onclick="clicker()">
+		<!--creates the hit button-->
+		<input type="button" id="hit" value="HIT" onclick="hitclicker()">
+		<!--creates stay button-->
+		<input type="button" id="stay" value="STAY" onclick="">
+		<!--placeholder to enter bets-->
+		<input type="number" id="Raise Bet:" step="5" value="5" 	placeholder="Enter Ante" border="1">
+	</form><br><br>
+
+	<h3 id="totalEarns"></h3><br><br>
+
+
+
+
+	<script type="text/javascript">
+
+
+		var deck = ['A', '2', '3', '4', '5', '6', '7', '8', '9','10', 'J', 'Q', 'K'];
+
+		//randomizes the cards dealt at the start of game to dealer and player
+		function clicker(){
+			var ran = parseInt(Math.random()*deck.length);
+			console.log(deck[ran]);
+			document.getElementById("dealer").innerHTML +=
+			document.getElementById("yourHand").innerHTML +=
+		}
+		//randomizes the card when player wants to hit for another card
+		function hitclicker(){
+			var ran = parseInt(Math.random()*deck.length);
+			console.log(deck[ran]);
+			document.getElementById("hit").innerHTML += deck[ran] + " , ";
+		}
+		//adds the sum of the total earnings of the bets
+		function addBet(){
+			return sum
+
+		}
+		//claims if the player bust, wins or ties
+		for (var i = 0; i < deck.length; i++){
+			if(){
+
+			}
+		}
+		///create a for loop and split the the hand
+		
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

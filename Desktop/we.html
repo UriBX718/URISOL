@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<h1 id="display">Dealer:</h1> 
+<h2 id="dTotal"></h1>
+
+<h1 id="pdisplay">Player:</h2>
+<h2 id="pTotal"></h2>
+
+
+
+
+<input type="button" value="START" onclick="startClicker()">
+<input type="button" value="HIT" onclick="hitClick()">
+<input type="button" value="STAY" placeholder="" onclick="stay()">
+<h2 id="playerplayer"></h2>
+
+	<script type="text/javascript">
+		
+//creates variable for deck
+		var deck = ['A', '2', '3', '4', '5', '6', '7', '8', '9','10', 'J', 'Q', 'K'];
+
+		var index = 0
+
+//randomizes the cards dealt at the start of game
+		function startClicker(){
+			var ran1 = parseInt(Math.random()*deck.length);
+
+			var ran2 = parseInt(Math.random()*deck.length);
+			
+			var ran3 = parseInt(Math.random()*deck.length);
+
+			var ran4 = parseInt(Math.random()*deck.length);
+
+			dHand = []
+			pHand = []
+
+			dHand.push (deck[ran1]);
+			dHand.push (deck[ran2]);
+
+			pHand.push (deck[ran3]);
+			pHand.push (deck[ran4]);
+
+			document.getElementById("display").innerHTML = dHand.toString();
+			document.getElementById("pdisplay").innerHTML = pHand.toString();
+
+			
+		}
+
+		var dHand = [];
+
+		var pHand = [];
+
+
+
+// adds card for the hit button
+		function hitClick() {
+
+			var hit = parseInt(Math.random()*deck.length);
+
+			pHand.push(deck[hit]);
+
+			document.getElementById("pdisplay").innerHTML = pHand.toString();
+			var pResults = score(pHand)
+
+
+
+			if(pResults[0] == 21 || pResults[1] == 21){
+				document.getElementById("playerplayer").innerHTML = "You Win"
+			}
+			else if(pResults[0] > 21 && pResults[1] > 21){ 
+				document.getElementById("playerplayer").innerHTML = "You Busted"
+			}
+		
+
+		}
+
+//stay button to find score
+		function stay(){
+			var dResults = score(dHand)
+			var pResults = score(pHand)
+
+			if(dResults[0] == 21 || dResults[1] == 21){
+				document.getElementById("playerplayer").innerHTML = "You Win"
+			}
+			else if(dResults[0] > 21 && dResults[1] > 21){ 
+				document.getElementById("playerplayer").innerHTML = "You Busted"
+			}
+			else if(pResults[0] == 21 || pResults[1] == 21){
+				document.getElementById("playerplayer").innerHTML = "You Win"
+			}
+			else if(pResults[0] > 21 && pResults[1] > 21){ 
+				document.getElementById("playerplayer").innerHTML = "You Busted"
+			}
+			else if(pResults[0] == dResults[0] && pResults[1] == dResults[1]){
+				document.getElementById("playerplayer").innerHTML = "Tied"
+			}
+			else if(pResults[0] > dResults[0] && pResults[1] > dResults[1]){
+				document.getElementById("playerplayer").innerHTML = "Winner"
+			}
+		}
+			
+
+//tallies total score for win lose or tie
+
+
+		function score(cards){
+			var sum1 = 0
+			var sum2 = 0
+
+			for(var i = 0; i < cards.length; i++){
+				if(cards[i] === 'A'){ 
+					sum1 += 1;
+					sum2 += 11;
+				}
+				else if(cards[i] === 'K') {
+					sum1 += 10;
+					sum2 += 10;
+				}
+				else if(cards[i] === 'Q'){
+					sum1 += 10;
+					sum2 += 10;
+				}
+				else if(cards[i] === 'J'){
+					sum1 += 10;
+					sum2 += 10;
+				}
+				else if(cards[i] === '2'){
+					sum1 += 2;
+					sum2 += 2;
+				}
+				else if(cards[i] === '3'){
+					sum1 += 3;
+					sum2 += 3;
+				}
+				else if(cards[i] === '4'){
+					sum1 += 4;
+					sum2 += 4;
+				}
+				else if(cards[i] === '5'){
+					sum1 += 5;
+					sum2 += 5;
+				}
+				else if(cards[i] === '6'){
+					sum1 += 6;
+					sum2 += 6;
+				}
+				else if(cards[i] === '7'){
+					sum1 += 7;
+					sum2 += 7;
+				}
+				else if(cards[i] === '8'){
+					sum1 += 8;
+					sum2 += 8;
+				}
+				else if(cards[i] === '9'){
+					sum1 += 9;
+					sum2 += 9;
+				}
+				else{
+				}
+			}
+
+			return [sum1, sum2]
+			 
+
+		}
+
+
+	</script>
+</body>
+</html>

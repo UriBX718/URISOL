@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+	<!--creates id for dealer and player hand-->
+	<h1 id="start">Dealer:</h1>
+	<h1 id="start">Your Hand:</h1>
+
+	<form>
+		<!--creates the start button-->
+		<input type="button" id="start" value="START" onclick="card()">
+
+		<!--creates the hit button-->
+		<input type="button" id="hitMe" value="HIT" onclick="ranHit()">
+
+		<!--creates the stay button-->
+		<input type="button" id="stay" value="STAY" onclick="score()">
+
+		<!--creates bet button-->
+		<input type="number" id="raiseBet" value="100" step="10" border="1">
+
+
+	</form>
+
+	<!--creates id for bets-->
+	<h2 id="totalEarns">Total Earns:</h2>
+
+	<!--display winner-->
+	<h4 id="display"></h4>
+
+
+
+
+
+
+
+	<script type="text/javascript">
+
+		//creates random deck of cards
+		var deckOcards = Math.floor((Math.random() * 52) + 1);
+	    var fullDeck = Math.floor((Math.random(deckOcards) % 13) + 1);
+
+		//sets value for face cards
+		var value = function() {
+			//Jack, Queen, King value set at 10
+			if(fullDeck > 10 | fullDeck === 0){
+				return 10;	
+			}
+			//Ace value set at 1 or 11
+			else if(fullDeck === 1){
+				return 1 | 11;
+			}
+			else{
+			}
+		};
+
+		//Deals random card with suit and number
+		var card = function(number, suit) {
+
+			var cardNumber = Math.floor((Math.random() * 13) + 1);
+		    var cardSuit = Math.floor((Math.random() * 4) + 1);
+
+		    this.cardSuit = suit;
+			this.cardNumber = number;
+
+			//assigns face card to number
+			this.getNumber = function() {return cardNumber;};
+			this.getNumberStr = function() {
+				switch (cardNumber) {
+					case 1: return "Ace";
+						break
+					case 11: return "Jack";
+						break
+					case 12: return "Queen";
+						break
+					case 13: return "King";
+						break
+					default: return cardNumber;
+						break
+				}
+			};
+			//assigns suit to card 
+			this.getSuit = function() {return cardSuit;};
+			this.getSuitStr = function() {
+				switch (cardSuit) {
+					case 1: return "Diamond";
+						break
+					case 2: return "Spade";
+						break
+					case 3: return "Heart";
+						break
+					case 4: return "Club";
+						break
+					default: return "[unknown suit value: " + cardSuit + "]";
+				}
+			
+		    return card(number, suit);
+
+		    //deals random cards for both dealer and player at start of game
+		    var pCard1 = card() 	
+		    var pCard2 = card() 
+		   
+		    var dCard1 = card() 	
+		    var dCard2 = card() 
+		    	
+		    
+		}
+
+		
+
+		//randomizes the cards dealt at the start of game to dealer and player
+			function clicker(){
+			var ran = parseInt(Math.random()*deck.length);
+			console.log(deck[ran]);
+			document.getElementById("dealer").innerHTML +=
+			document.getElementById("yourHand").innerHTML +=
+		}
+	</script>
+</body>
+</html>

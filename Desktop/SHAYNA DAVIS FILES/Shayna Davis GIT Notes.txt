@@ -1,0 +1,93 @@
+github
+itoldyouso4
+
+TERMINAL
+
+fork- connect you to the github knowledge house\
+
+pwd- print working directory, lets you know location.
+
+ls- list all the files and all the directories in current folder
+
+cd-change directory *type the location type exactly as seen
+
+. -current location
+
+.. -my previous location
+
+~ -is the root *never save anything in your root folder
+ROOT FOLDER is the directory that holds all your files.
+
+git -shows you the different commands you can use.
+you can drag and drop and the address will be pasted to the terminal
+
+git status- check the changes made to the file
+
+git add . - and will be watched by repo new files will go into current location
+
+commit by saving the repository as it is now- git commit -m “add description in quotations”
+
+git push origin master- master is the default branch
+you can out any file into the B2T-The-Heights-Cohort1 in the test folder
+
+git init used to create a repository creates hidden git files that manage your files.
+
+rm -rf .git when you want to remove a repository
+
+
+
+
+
+
+
+creating a new Repo
+
+create new folder in desktop
+
+add it into the git
+
+create a new repo in github with exact same 
+
+name as the repo folder
+
+copy and paste the line with username url
+
+git remote -v tells us what our origin is.
+
+git branch -create a branch to work on repo without interfering with others
+
+git branch -d -deletes a branch
+
+git checkout (branch name) -switches branches
+
+after modifying the file go to the terminal and 
+git add .
+
+and commit files
+git commit -m “description of alterations”
+
+cat test.txt shows text of branches
+
+*control+c undo action
+control+z undo action
+
+git log resets 
+reverting specific commit
+before reset 
+git reset —hard HEAD~(#)
+“	“	“soft HEAD~(#)
+reverts mergingGIT
+
+git pull origin master -downloads and merges
+
+fetch - waits and you have to pull manually
+
+
+
+
+git checkout master
+git merge (branch)
+
+
+Vennie Dass
+daedalus_dvd@hotmail.com
